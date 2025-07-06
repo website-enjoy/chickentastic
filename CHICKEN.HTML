@@ -1,391 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CHICKENTASTIC</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CHICKENTASTIC</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-/*------------------------------------------------------------------------------------------------*/
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+    html, body {
+      height: 100%;
+    }
 
-        body {
-            background: #f6efe4;
-            color: #333;
-            height: 100%;
-            margin: 0 auto;
-        }
+    body {
+      background: red;
+      color: #333;
+      margin: 0 auto;
+    }
 
-        .header {
-            padding: 10px 5px;
-            background: #ffffff;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            margin-bottom: 15px;
-            border-radius: 0 0 15px 15px;
-        }
+    /* NAVIGATION */
+    .top-nav {
+      position: relative;
+      width: 100%;
+      background: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+      border-radius: 0 0 15px 15px;
+    }
 
-        .header h1 {
-            font-size: 0.1em;
-            font-weight: 200;
-            letter-spacing: 0.5px;
-        }
+    .menu-toggle {
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+    }
 
-        .menu-container {
-            display: flex;
-            flex-direction: column;
-            width:100%;
-            height:200px;
-            margin-bottom: 90px;
-        }
+    .logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 15px;
+      background: white;
+    }
 
-        .menu-item {
-            width: 100%;
-            zoom:100%;
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      border-top: 1px solid #ddd;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      border-radius: 15px 15px 0 0;
+      z-index: 1000;
+    }
 
-            
-        }
-        .menu-item img {
-            width: 100%;
-            zoom: 100%;
-            object-fit:scale-down;
-            display: block;
-            
-        }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.8em;
+      transition: color 0.2s;
+    }
 
+    .nav-item.active {
+      color: #2D3047;
+    }
 
+    .nav-item i {
+      font-size: 1.6em;
+      margin-bottom: 5px;
+    }
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            border-top: 1px solid #ddd;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            border-radius: 15px 15px 0 0;
-        }
+    /* DRAWER */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: 100%;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      transition: 0.3s ease;
+      z-index: 1001;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #666;
-            text-decoration: none;
-            font-size: 0.8em;
-            transition: color 0.2s;
-        }
+    .nav-drawer.active {
+      left: 0;
+    }
 
-        .nav-item.active {
-            color: #2D3047;
-        }
+    .nav-drawer ul {
+      list-style: none;
+      margin-top: 2rem;
+    }
 
-        .nav-item i {
-            font-size: 1.6em;
-            margin-bottom: 5px;
-        }
+    .nav-drawer li {
+      margin: 1.2rem 0;
+    }
 
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
+    .nav-drawer a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-        .modal-content {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            width: 85%;
-            max-width: 300px;
-        }
+    /* MENU IMAGES */
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 70px;
+    }
 
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.4em;
-            }
-            
-            .menu-item img {
-                max-height: 250px;
-            }
-        }
+    .menu-item {
+      width: 100%;
+    }
 
+    .menu-item img {
+      width: 100%;
+      object-fit: scale-down;
+      display: block;
+    }
 
+    .fullscreen-image {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
 
-                /* Navigation Drawer */
-        .nav-drawer {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100%;
-            background: #ffffff;
-            padding: 2rem 1.5rem;
-            transition: 0.3s ease;
-            z-index: 1001;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-        }
+    /* MODAL */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
 
-        .nav-drawer.active {
-            left: 0;
-        }
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 85%;
+      max-width: 300px;
+    }
 
-        .nav-drawer ul {
-            list-style: none;
-            margin-top: 2rem;
-        }
+    /* MEDIA QUERIES */
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.4em;
+      }
 
-        .nav-drawer li {
-            margin: 1.2rem 0;
-        }
-
-        .nav-drawer a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-                /* Top Navigation */
-        .top-nav {
-            position: relative;
-            top: 0;
-            width: 100%;
-            background: white;
-            padding: 10px 20px 10px 20px ;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #eeeeee;
-            text-align: center;
-            border-radius: 0 0 15px 15px;
-            
-        }
-
-/*-------------------------------------------------*/
-
-/*-------------------------------------------------*/
-
-
-
-        .menu-toggle {
-            font-size: 1.5rem;
-            color: #333;
-            cursor: pointer;
-        }
-
-        .logo {
-            height: 60px;
-            width: 60px;
-            background:rgb(255, 255, 255);
-            border-radius: 15px;
-        }
-
-
-        
-
-
-    </style>
+      .menu-item img {
+        max-height: 250px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="top-nav">
-        <i class="fas fa-bars menu-toggle"></i>
-            <h1>CHICKENTASTIC MENU</h1>
-        <img src="CHICKENTASTICLOGO.svg" alt="Solo Logo" class="logo">
-    </nav>
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <i class="fas fa-bars menu-toggle"></i>
+    <h1>CHICKENTASTIC MENU</h1>
+    <img src="CHICKENTASTICLOGO.svg" alt="Solo Logo" class="logo">
+  </nav>
 
-    <div class="nav-drawer">
-        <h2 style="color: #333; margin-bottom: 1.5rem;">SOLO</h2>
-        <ul>
-            <li><a href="https://www.instagram.com/chickentastic.oran?igsh=dGZ5NzFjY3p0djFk" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@chicken.tastic?_t=ZM-8xmqQsUuOWu&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
-            <li><a href="#" onclick="showContact()"><i class="fas fa-phone"></i> Phone</a></li>
-            <li><a href="https://www.facebook.com/share/1FWhCA2iT2/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-        </ul>
+  <!-- DRAWER -->
+  <div class="nav-drawer">
+    <h2 style="color: #333; margin-bottom: 1.5rem;">SOLO</h2>
+    <ul>
+      <li><a href="https://www.instagram.com/chickentastic.oran" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@chicken.tastic" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+      <li><a href="#" onclick="showContact()"><i class="fas fa-phone"></i> Phone</a></li>
+      <li><a href="https://www.facebook.com/share/1FWhCA2iT2" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+    </ul>
+  </div>
+
+  <!-- FULLSCREEN IMAGE + MENU -->
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="CHICKENTASTIC01.jpg" alt="Pizza" class="fullscreen-image">
     </div>
-
-
-    <div class="menu-container">
-        <div class="menu-item">
-            <img src="CHICKENTASTIC01.jpg" alt="Pizza" class="fullscreen-image">
-        </div>
-        <div class="menu-item">
-            <img src="CHICKENTASTIC.jpg" alt="Tacos" class="fullscreen-image">
-        </div>
-
-
-
-
-
-
-
-
-
-    <nav class="bottom-nav">
-        
-        <a href="https://www.instagram.com/chickentastic.oran?igsh=dGZ5NzFjY3p0djFk" target="_blank" class="nav-item">
-            <i class="fab fa-instagram"></i>
-            Instagram
-        </a>
-
-
-        <a href="https://www.tiktok.com/@chicken.tastic?_t=ZM-8xmqQsUuOWu&_r=1" target="_blank" class="nav-item">
-            <i class="fab fa-tiktok"></i>
-            TikTok
-        </a>
-
-        <a href="#" class="nav-item active">
-            <i class="fas fa-home"></i>
-            Menu
-        </a>
-
-
-        <a href="#" class="nav-item" onclick="showContact()">
-            <i class="fas fa-phone"></i>
-            Phone
-        </a>
-
-        <a href="https://www.facebook.com/share/1FWhCA2iT2/?mibextid=wwXIfr" target="_blank" class="nav-item">
-            <i class="fab fa-facebook"></i>
-            Facebook
-        </a>
-
-
-    </nav>
-
-
-
-
-
-
-
-
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <h3 style="margin-bottom: 20px; color: #2D3047;">Contact Us</h3>
-            <div style="margin-bottom: 25px;">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-phone" style="margin-right: 10px; color: #2D3047;"></i>
-                    <span>+213 555768162</span>
-                </div>
-                
-            </div>
-            <button onclick="copyPhone()" style="
-                background: #2D3047;
-                border: none;
-                padding: 12px;
-                border-radius: 8px;
-                color: white;
-                width: 100%;
-                margin-bottom: 10px;
-                font-weight: 500;
-            ">
-                Copy Number
-            </button>
-            <button onclick="closeModal()" style="
-                background: none;
-                border: 1px solid #ddd;
-                color: #666;
-                padding: 12px;
-                border-radius: 8px;
-                width: 100%;
-                font-weight: 500;
-            ">
-                Close
-            </button>
-        </div>
+    <div class="menu-item">
+      <img src="CHICKENTASTIC.jpg" alt="Tacos">
     </div>
+  </div>
 
-    <script>
-        function showContact() {
-            document.getElementById('contactModal').style.display = 'flex';
-        }
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+    <a href="https://www.instagram.com/chickentastic.oran" target="_blank" class="nav-item">
+      <i class="fab fa-instagram"></i>Instagram
+    </a>
+    <a href="https://www.tiktok.com/@chicken.tastic" target="_blank" class="nav-item">
+      <i class="fab fa-tiktok"></i>TikTok
+    </a>
+    <a href="#" class="nav-item active">
+      <i class="fas fa-home"></i>Menu
+    </a>
+    <a href="#" class="nav-item" onclick="showContact()">
+      <i class="fas fa-phone"></i>Phone
+    </a>
+    <a href="https://www.facebook.com/share/1FWhCA2iT2" target="_blank" class="nav-item">
+      <i class="fab fa-facebook"></i>Facebook
+    </a>
+  </nav>
 
-        function closeModal() {
-            document.getElementById('contactModal').style.display = 'none';
-        }
+  <!-- CONTACT MODAL -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h3 style="margin-bottom: 20px; color: #2D3047;">Contact Us</h3>
+      <div style="margin-bottom: 25px;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <i class="fas fa-phone" style="margin-right: 10px; color: #2D3047;"></i>
+          <span>+213 555768162</span>
+        </div>
+      </div>
+      <button onclick="copyPhone()" style="background: #2D3047; border: none; padding: 12px; border-radius: 8px; color: white; width: 100%; margin-bottom: 10px; font-weight: 500;">
+        Copy Number
+      </button>
+      <button onclick="closeModal()" style="background: none; border: 1px solid #ddd; color: #666; padding: 12px; border-radius: 8px; width: 100%; font-weight: 500;">
+        Close
+      </button>
+    </div>
+  </div>
 
-        function copyPhone() {
-            navigator.clipboard.writeText('+213555768162');
-            alert('Phone number copied!');
-        }
+  <!-- SCRIPT -->
+  <script>
+    function showContact() {
+      document.getElementById('contactModal').style.display = 'flex';
+    }
 
-        // Navigation active state
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+    }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+    function copyPhone() {
+      navigator.clipboard.writeText('+213555768162');
+      alert('Phone number copied!');
+    }
 
+    // Navigation active state
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function () {
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
 
-         // Navigation Active State
-         document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                if(!this.classList.contains('active')) {
-                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
+    // Close modal on outside click
+    window.onclick = function (event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target == modal) closeModal();
+    };
 
-        // Navigation Drawer Toggle
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-drawer').classList.add('active');
-        });
+    // Toggle navigation drawer
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-drawer').classList.add('active');
+    });
 
-        // Close Drawer
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-drawer') && !e.target.closest('.menu-toggle')) {
-                document.querySelector('.nav-drawer').classList.remove('active');
-            }
-        });
-
-
-                // Modal Functions
-                function showContact() {
-            document.getElementById('contactModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('contactModal').style.display = 'none';
-        }
-
-        function copyPhone() {
-            navigator.clipboard.writeText('+213 555768162');
-            alert('Phone number copied!');
-        }
-
-
-
-    </script>
+    // Close drawer on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-drawer') && !e.target.closest('.menu-toggle')) {
+        document.querySelector('.nav-drawer').classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
