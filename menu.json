@@ -1,0 +1,369 @@
+{
+  "categories": [
+    {
+  "id": "family-packs",
+  "name": "Family Packs",
+  "featured": true,
+  "label": "Best for Sharing",
+  "image": "images/category-family-packs.png",
+  "combo_offer": {
+    "description": "Add 4 buckets of fries + 1 soda",
+    "price": 500,
+    "image": "images/combo-offer.png"
+  },
+  "items": [
+    {
+      "name": "Pack burger",
+      "description": "Burger king, Burger chicken, Burger twix, Burger monster",
+      "price": 2600,
+      "image": "images/item-pack-burger.png"
+    },
+    {
+      "name": "Pack cheezy",
+      "description": "2 Cheezy mix, Cheezy poulet, Cheezy viande",
+      "price": 2600,
+      "image": "images/item-pack-cheezy.png"
+    },
+    {
+      "name": "Pack tenders",
+      "description": "20 tenders",
+      "price": 2690,
+      "image": "images/item-pack-tenders.png"
+    },
+    {
+      "name": "Pack wings",
+      "description": "33 wings",
+      "price": 2590,
+      "image": "images/item-pack-tenders.png"
+    },
+    {
+      "name": "Pack mix",
+      "description": "10 tenders, 14 wings",
+      "price": 2690,
+      "image": "images/item-pack-tenders.png"
+    }
+  ]
+},
+    {
+      "id": "burger",
+      "name": "Burger",
+      "image": "images/category-burger.png",
+      "items": [
+        {
+          "name": "King",
+          "description": "Steak haché, salade, tomate, fromage, sauce maison",
+          "price": 450,
+          "image": "images/item-king.png"
+        },
+        {
+          "name": "Chicken",
+          "description": "Tenders, salade, tomate, fromage, sauce maison",
+          "price": 550,
+          "image": "images/item-chicken.png"
+        },
+        {
+          "name": "Monster",
+          "description": "Double steak haché, salade, tomate, fromage, sauce maison",
+          "price": 800,
+          "image": "images/item-monster.png"
+        },
+        {
+          "name": "Twix",
+          "description": "Steak haché, tenders, salade, tomate, fromage, sauce maison",
+          "price": 800,
+          "image": "images/item-twix.png"
+        }
+      ]
+    },
+    {
+      "id": "crispy",
+      "name": "Crispy",
+      "image": "images/category-crispy.png",
+      "items": [
+        {
+          "name": "Chilly wings",
+          "description": "6 wings, frites",
+          "price": 550,
+          "image": "images/item-chilly-wings-6.png"
+        },
+        {
+          "name": "Chilly wings",
+          "description": "10 wings, frites",
+          "price": 900,
+          "image": "images/item-chilly-wings-10.png"
+        },
+        {
+          "name": "Mix",
+          "description": "4 wings, 3 tenders, frites",
+          "price": 790,
+          "image": "images/item-mix.png"
+        },
+        {
+          "name": "Champion",
+          "description": "6 tenders, frites",
+          "price": 890,
+          "image": "images/item-champion.png"
+        },
+        {
+          "name": "Big buc",
+          "description": "5 wings, 2 pilons, 3 tenders, frites",
+          "price": 990,
+          "image": "images/item-big-buc.png"
+        },
+        {
+          "name": "Kids meal",
+          "description": "3 tenders, frites, jus",
+          "price": 490,
+          "image": "images/item-kids-meal.png"
+        }
+      ]
+    },
+    {
+      "id": "tacos",
+      "name": "Tacos",
+      "image": "images/category-tacos.png",
+      "items": [
+        {
+          "name": "Poulet",
+          "description": "Poulet, frites, cheddar, sauce fromagère",
+          "price": 700,
+          "image": "images/item-tacos-poulet.png"
+        },
+        {
+          "name": "Viande",
+          "description": "Viande, frites, cheddar, sauce fromagère",
+          "price": 800,
+          "image": "images/item-tacos-viande.png"
+        },
+        {
+          "name": "Mezclado",
+          "description": "Viande, poulet, frites, cheddar, sauce fromagère",
+          "price": 850,
+          "image": "images/item-tacos-mezclado.png"
+        },
+        {
+          "name": "Mexicain",
+          "description": "Viande, poulet, frites, sauce mexicain, fromage",
+          "price": 800,
+          "image": "images/item-tacos-mezclado.png"
+        },
+        {
+          "name": "Tastic",
+          "description": "Tenders, frites, sauce fromagère, cheddar",
+          "price": 800,
+          "image": "images/item-tacos-tastic.png"
+        },
+        {
+          "name": "Fumee",
+          "description": "Dinde fumée, poulet, frites, sauce fromagère, cheddar",
+          "price": 900,
+          "image": "images/item-tacos-fumee.png"
+        }
+      ]
+    },
+    {
+      "id": "naan",
+      "name": "Naan",
+      "image": "images/category-naan.png",
+      "items": [
+        {
+          "name": "Prince",
+          "description": "3 tenders, salade, tomate, sauce maison, fromage",
+          "price": 650,
+          "image": "images/item-prince.png"
+        },
+        {
+          "name": "Tiger",
+          "description": "Steak haché, salade, tomate, fromage, sauce maison",
+          "price": 650,
+          "image": "images/item-tiger.png"
+        },
+        {
+          "name": "Lion",
+          "description": "2 tenders, steak haché, salade, tomate, fromage, sauce maison",
+          "price": 700,
+          "image": "images/item-lion.png"
+        },
+        {
+          "name": "Beast",
+          "description": "Tenders, steak haché, œuf, dinde fumée, salade, tomate, fromage, sauce maison",
+          "price": 750,
+          "image": "images/item-beast.png"
+        },
+        {
+          "name": "Gladiateur",
+          "description": "Poulet mariné façon curry mexicain, salade, tomate, fromage, sauce maison",
+          "price": 800,
+          "image": "images/item-gladiateur.png",
+          "choices": {
+            "Base": ["mexicain", "curry"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cheezy",
+      "name": "Cheezy",
+      "image": "images/category-cheezy.png",
+      "items": [
+        {
+          "name": "Poulet",
+          "description": "Poulet, frites, cheddar, sauce fromagère",
+          "price": 550,
+          "image": "images/item-cheezy-poulet.png"
+        },
+        {
+          "name": "Viande",
+          "description": "Viande, frites, cheddar, sauce fromagère",
+          "price": 650,
+          "image": "images/item-cheezy-viande.png"
+        },
+        {
+          "name": "Mix",
+          "description": "Poulet, viande, frites, cheddar, sauce fromagère",
+          "price": 700,
+          "image": "images/item-cheezy-mix.png"
+        }
+      ]
+    },
+    {
+      "id": "wrap",
+      "name": "Wrap",
+      "image": "images/category-wrap.png",
+      "items": [
+        {
+          "name": "Big Boss",
+          "description": "3 tenders, salade, tomate, fromage, sauce maison",
+          "price": 590,
+          "image": "images/item-big-boss.png"
+        },
+        {
+          "name": "Torando",
+          "description": "3 tenders, gouda, chips, salade, tomate, fromage, sauce maison",
+          "price": 700,
+          "image": "images/item-torando.png"
+        },
+        {
+          "name": "Crispy",
+          "description": "Tenders, frites, cheddar, sauce fromagère",
+          "price": 700,
+          "image": "images/item-torando.png"
+        }
+      ]
+    },
+    {
+      "id": "bowls",
+      "name": "Bowls",
+      "image": "images/category-bowls.png",
+      "items": [
+        {
+          "name": "Crunchy bowl",
+          "description": "Poulet crispy, frites, sauce fromagère, sauce gruyère",
+          "price": 750,
+          "image": "images/item-crunchy-bowl.png"
+        },
+        {
+          "name": "Poutine Poulet",
+          "description": "Tenders, sauce fromagère, frites ou riz",
+          "price": 650,
+          "image": "images/item-crunchy-bowl.png",
+          "choices": {
+            "Base": ["Frites", "Riz"]
+          }
+        },
+        {
+          "name": "Poutine buffalo",
+          "description": "Viande hachée, sauce fromagère, frites ou riz",
+          "price": 800,
+          "image": "images/item-poutine-buffalo.png",
+          "choices": {
+            "Base": ["Frites", "Riz"]
+          }
+        },
+        {
+          "name": "Poutine mixt",
+          "description": "Viande hachée, tenders, sauce fromagère, frites ou riz",
+          "price": 950,
+          "image": "images/item-poutine-mixt.png",
+          "choices": {
+            "Base": ["Frites", "Riz"]
+          }
+        },
+        {
+          "name": "Plat tastic",
+          "description": "Tenders, frites, sauce fromagère, cheddar",
+          "price": 1350,
+          "image": "images/item-plat-tastic.png"
+        }
+      ]
+    },
+    {
+      "id": "salade",
+      "name": "Salade",
+      "image": "images/category-salade.png",
+      "items": [
+        {
+          "name": "Coslo",
+          "description": "Chou, carottes râpées, raisins secs, maïs, mayonnaise",
+          "price": 400,
+          "image": "images/item-coslo.png"
+        },
+        {
+          "name": "Italienne salad",
+          "description": "Salade verte, tomate, maïs, olives, pâtes, poivron, thon, mayonnaise, fromage",
+          "price": 450,
+          "image": "images/item-italienne.png"
+        },
+        {
+          "name": "Cesar",
+          "description": "Salade verte, tomate, œuf dur, maïs, olives, poulet crispy, gouda, sauce César",
+          "price": 550,
+          "image": "images/item-cesar.png"
+        }
+      ]
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "image": "images/category-pasta.png",
+      "items": [
+        {
+          "name": "Sauce au poulet",
+          "description": "Spaghetti ou penne rigate avec sauce poulet",
+          "price": 600,
+          "image": "images/item-pasta-poulet.png",
+          "choices": {
+            "Pasta type": ["Spaghetti", "Penne rigate"]
+          }
+        },
+        {
+          "name": "Sauce bolognaise",
+          "description": "Spaghetti ou penne rigate avec sauce bolognaise",
+          "price": 650,
+          "image": "images/item-pasta-bolognaise.png",
+          "choices": {
+            "Pasta type": ["Spaghetti", "Penne rigate"]
+          }
+        },
+        {
+          "name": "Sauce pesto",
+          "description": "Spaghetti ou penne rigate avec sauce pesto",
+          "price": 700,
+          "image": "images/item-pasta-pesto.png",
+          "choices": {
+            "Pasta type": ["Spaghetti", "Penne rigate"]
+          }
+        },
+        {
+          "name": "Sauce 4 fromages",
+          "description": "Spaghetti ou penne rigate avec sauce 4 fromages",
+          "price": 800,
+          "image": "images/item-pasta-4-fromages.png",
+          "choices": {
+            "Pasta type": ["Spaghetti", "Penne rigate"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Chickentastic — Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CORNER FLAME DECORATIONS -->
+  <div class="flame-corner flame-tl" aria-hidden="true">
+    <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-10 -10 C15 5, 55 -5, 72 38 C82 62, 60 85, 38 74 C16 63, 10 36, -10 58 Z" fill="#C42031"/>
+      <path d="M-10 -10 C8 18, 35 8, 50 42 C60 66, 40 88, 22 77 C5 66, 2 40, -10 58 Z" fill="#FDC900"/>
+      <path d="M-10 -10 C2 28, 20 18, 32 48 C40 68, 24 82, 12 74 Z" fill="#C42031" opacity="0.8"/>
+      <ellipse cx="82" cy="52" rx="9" ry="6" fill="#FDC900" opacity="0.85" transform="rotate(-35 82 52)"/>
+      <ellipse cx="100" cy="30" rx="7" ry="5" fill="#C42031" opacity="0.7" transform="rotate(-20 100 30)"/>
+    </svg>
+  </div>
+
+  <div class="flame-corner flame-tr" aria-hidden="true">
+    <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M160 -10 C135 5, 95 -5, 78 38 C68 62, 90 85, 112 74 C134 63, 140 36, 160 58 Z" fill="#FDC900"/>
+      <path d="M160 -10 C142 18, 115 8, 100 42 C90 66, 110 88, 128 77 C145 66, 148 40, 160 58 Z" fill="#C42031"/>
+      <path d="M160 -10 C148 28, 130 18, 118 48 C110 68, 126 82, 138 74 Z" fill="#FDC900" opacity="0.8"/>
+      <circle cx="68" cy="52" r="7" fill="#FDC900" opacity="0.8"/>
+      <circle cx="52" cy="30" r="5" fill="#C42031" opacity="0.65"/>
+    </svg>
+  </div>
+
+  <div class="flame-corner flame-bl" aria-hidden="true">
+    <svg viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-10 200 C5 172, -8 128, 36 106 C68 88, 92 116, 70 138 C48 160, 16 152, 48 200 Z" fill="#FDC900"/>
+      <path d="M-10 200 C14 176, 4 136, 42 116 C70 100, 90 126, 72 146 C54 165, 24 158, 52 200 Z" fill="#C42031"/>
+      <path d="M-10 200 C24 184, 16 158, 50 140 C72 128, 88 148, 74 162 Z" fill="#FDC900" opacity="0.75"/>
+      <ellipse cx="68" cy="88" rx="10" ry="7" fill="#FDC900" opacity="0.85" transform="rotate(25 68 88)"/>
+      <ellipse cx="96" cy="72" rx="8" ry="6" fill="#C42031" opacity="0.7" transform="rotate(12 96 72)"/>
+      <ellipse cx="28" cy="158" rx="12" ry="8" fill="#C42031" opacity="0.55" transform="rotate(-18 28 158)"/>
+    </svg>
+  </div>
+
+  <div class="flame-corner flame-br" aria-hidden="true">
+    <svg viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M200 200 C185 172, 198 128, 154 106 C122 88, 98 116, 120 138 C142 160, 174 152, 142 200 Z" fill="#C42031"/>
+      <path d="M200 200 C176 176, 186 136, 148 116 C120 100, 100 126, 118 146 C136 165, 166 158, 138 200 Z" fill="#FDC900"/>
+      <path d="M200 200 C166 184, 174 158, 140 140 C118 128, 102 148, 116 162 Z" fill="#C42031" opacity="0.75"/>
+      <circle cx="112" cy="162" r="8" fill="#C42031" opacity="0.65"/>
+      <ellipse cx="142" cy="90" rx="9" ry="6" fill="#FDC900" opacity="0.85" transform="rotate(-22 142 90)"/>
+    </svg>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="logo-icon-wrap">
+          <img src="images/logo.png" alt="Chickentastic logo" class="brand-logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">CHICKENTASTIC</span>
+          <div class="brand-menu-row">
+            <span class="menu-line"></span>
+            <span class="brand-sub">MENU</span>
+            <span class="menu-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- CATEGORY VIEW -->
+    <section id="category-view" class="view active">
+      <div class="section-intro">
+        <p class="section-tagline">What are you craving?</p>
+      </div>
+      <div id="category-grid" class="category-grid"></div>
+    </section>
+
+    <!-- ITEMS VIEW -->
+    <section id="items-view" class="view">
+      <div class="items-header">
+        <button class="back-btn" id="back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back</span>
+        </button>
+        <div class="items-title-group">
+          <img id="category-icon" class="items-cat-icon" src="" alt="" />
+          <h2 id="items-category-title" class="items-title"></h2>
+        </div>
+      </div>
+
+      <!-- COMBO OFFER BANNER — shown only when category has combo_offer -->
+      <div id="combo-banner" class="combo-banner" style="display:none">
+        <div class="combo-inner">
+          <div class="combo-img-wrap">
+            <!-- Place your combo offer image as images/combo-offer.png -->
+            <img id="combo-img" src="" alt="Combo offer" class="combo-img" />
+          </div>
+          <div class="combo-text">
+            <span class="combo-label">Combo offre</span>
+            <span id="combo-desc" class="combo-desc"></span>
+          </div>
+          <div id="combo-price" class="combo-price"></div>
+        </div>
+      </div>
+
+      <div id="items-grid" class="items-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- SOCIAL FOOTER -->
+  <footer class="social-footer">
+    <div class="social-footer-inner">
+
+      <div class="social-title-row">
+        <span class="social-title-line"></span>
+        <span class="social-title-text">Find Us</span>
+        <span class="social-title-line"></span>
+      </div>
+
+      <div class="social-links">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/chickentastic.oran" target="_blank" rel="noopener" class="social-card social-ig">
+          <div class="social-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">Instagram</span>
+            <span class="social-handle">@chickentastic.oran</span>
+          </div>
+          <div class="social-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@chicken.tastic" target="_blank" rel="noopener" class="social-card social-tt">
+          <div class="social-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">TikTok</span>
+            <span class="social-handle">@chicken.tastic</span>
+          </div>
+          <div class="social-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/1FWhCA2iT2" target="_blank" rel="noopener" class="social-card social-fb">
+          <div class="social-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">Facebook</span>
+            <span class="social-handle">Chickentastic</span>
+          </div>
+          <div class="social-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+213555766862" class="social-card social-phone">
+          <div class="social-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">Call Us</span>
+            <span class="social-handle">+213 555 76 68 62</span>
+          </div>
+          <div class="social-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="footer-copy">© 2025 Chickentastic · Oran, Algeria</p>
+    </div>
+  </footer>
+
+  <div class="bottom-swoosh"></div>
+  <script src="script.js"></script>
+</body>
+</html>
