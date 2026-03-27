@@ -95,7 +95,7 @@ function showItemsView(cat) {
   if (cat.combo_offer) {
     comboDesc.textContent  = cat.combo_offer.description;
     comboPrice.textContent = `+${cat.combo_offer.price.toLocaleString('fr-DZ')} DA`;
-    comboImg.src = cat.combo_offer.image || 'images/combo-offer.png';
+    comboImg.src = cat.combo_offer.image || 'images/combo-offer.webp';
     comboImg.alt = cat.combo_offer.description;
     comboBanner.style.display = 'block';
   } else {

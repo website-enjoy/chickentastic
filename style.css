@@ -820,3 +820,37 @@ body {
 
 /* Make sure main content doesn't need bottom padding for footer */
 .main-content { padding-bottom: 40px; }
+
+/* ---- DEVELOPER CREDIT ---- */
+.dev-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dev-credit:active { transform: scale(0.97); }
+
+@media (hover: hover) {
+  .dev-credit:hover { background: rgba(196,32,49,0.06); }
+}
+
+.dev-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+.dev-name {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: 0.3px;
+}
