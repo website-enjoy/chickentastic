@@ -364,6 +364,49 @@
           }
         }
       ]
+    },
+    {
+  "id": "sandwich",
+  "name": "Sandwich",
+  "image": "images/category-sandwich.webp",
+  "items": [
+    {
+      "name": "Original",
+      "description": "Poulet en sauce, salade, tomate, sauce fromagère, sauce maison, gouda",
+      "price": 600,
+      "image": "images/item-sandwich-original.webp"
+    },
+    {
+      "name": "Spicy",
+      "description": "Escalope piment, sauce fromagère, sauce maison, poivrons, oignons, gouda",
+      "price": 750,
+      "image": "images/item-sandwich-spicy.webp"
+    },
+    {
+      "name": "Rustiko",
+      "description": "Steak haché, salade, tomate, sauce fromagère, gouda",
+      "price": 800,
+      "image": "images/item-sandwich-rustiko.webp"
+    },
+    {
+      "name": "Américain",
+      "description": "Poulet, dinde fumé, sauce fromagère, salade, tomate, gouda",
+      "price": 800,
+      "image": "images/item-sandwich-americain.webp"
+    },
+    {
+      "name": "Between",
+      "description": "Poulet, steak haché, salade, tomate, sauce fromagère, sauce maison, gouda",
+      "price": 850,
+      "image": "images/item-sandwich-between.webp"
+    },
+    {
+      "name": "Le Tastic",
+      "description": "Poulet crispy, sauce fromagère, salade, tomate, sauce maison, gouda, gratiné gruyère",
+      "price": 950,
+      "image": "images/item-sandwich-le-tastic.webp"
     }
+  ]
+}
   ]
 }
